@@ -8,7 +8,7 @@ body{
   margin: 40px auto;
 }
  #to-do-form input{
-   background-color: rgb(27,112,137);
+   background-color: rgb(211, 31, 142);
    border: 0;
    width: 200px;
    height: 50px;
@@ -19,7 +19,7 @@ body{
    color: #fff;
  }
  #to-do-form input::placeholder{
-   color: rgba(255,255,255,0.5);
+   color: rgb(250, 245, 248);
  }
  #to-do-form input:focus{
   outline: none;
@@ -30,7 +30,7 @@ body{
   width: 50px;
   border-radius: 5px;
   border: 0;
-  background-color: rgb(202,156,24);
+  background-color: rgb(211, 31, 142);
   cursor: pointer;
   font-weight: bolder;
   color: #fff;
