@@ -1,5 +1,6 @@
 import React from 'react';
-import './ListItems.css'
+import './ListItems.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ListItems(props){
     const items = props.items;
@@ -7,7 +8,12 @@ function ListItems(props){
         {
 
        return <div className="list" key="item.key">
-           <p>{items.text}</p>
+           <p>{items.text}
+           <span>
+               <FontAwesomeIcon className="faicons" icon="trash"/>
+           </span>
+           </p>
+           
 
        </div>
         })
