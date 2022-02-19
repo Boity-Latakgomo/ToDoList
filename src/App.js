@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ListItems from './ListItems';
+import Like from './components/like';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 
@@ -83,7 +84,9 @@ class App extends React.Component {
 
       <ListItems items= {this.state.items}
       deleteItems = {this.deleteItem}
-      setUpdate = {this.setUpdate }>
+      setUpdate = {this.setUpdate }
+      likeItems = {this.likeItem}
+      >
       
       </ListItems>
       </div>
@@ -95,19 +98,4 @@ class App extends React.Component {
 export default App;
 
 
-{/* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */}
+{}
