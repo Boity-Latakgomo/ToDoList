@@ -5,8 +5,10 @@ import ListItems from './ListItems';
 import Like from './components/like';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import {faHeart} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faTrash);
+library.add(faHeart);
 
 class App extends React.Component {
   constructor(props){
@@ -23,6 +25,7 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.setUpdate = this.setUpdate.bind(this);
+    this.likeItem = this.likeItem.bind(this);
   }
   handleInput(e){
     this.setState({
@@ -62,10 +65,18 @@ class App extends React.Component {
            item.text=text;
          }
        })
+     }
+     
+     likeItem(key){
+      const filteredItems = this.state.items.filter(item =>
+       item.key!==key);
        this.setState({
-        items: items
+         items:filteredItems
        })
        
+    this.setState({
+      items: this.state.items
+     })
      }
   render() { 
     return (

@@ -23,6 +23,11 @@ function ListItems(props){
                <FontAwesomeIcon className="faicons" 
                icon="trash"
                onClick={() => props.deleteItems(items.key)}
+
+               />
+               <FontAwesomeIcon className="like"
+               icon="heart"
+               onClick={() => props.likeItems(items.key)}
                />
            </span>
            </p>
