@@ -2,13 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ListItems from './ListItems';
-import Like from './components/like';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faTrash} from '@fortawesome/free-solid-svg-icons';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';
+import {faTrash, faHeart} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faTrash);
 library.add(faHeart);
+
 
 class App extends React.Component {
   constructor(props){
@@ -25,7 +24,6 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.setUpdate = this.setUpdate.bind(this);
-    this.likeItem = this.likeItem.bind(this);
   }
   handleInput(e){
     this.setState({
@@ -65,18 +63,10 @@ class App extends React.Component {
            item.text=text;
          }
        })
-     }
-     
-     likeItem(key){
-      const filteredItems = this.state.items.filter(item =>
-       item.key!==key);
        this.setState({
-         items:filteredItems
+        items: items
        })
        
-    this.setState({
-      items: this.state.items
-     })
      }
   render() { 
     return (
@@ -96,7 +86,6 @@ class App extends React.Component {
       <ListItems items= {this.state.items}
       deleteItems = {this.deleteItem}
       setUpdate = {this.setUpdate }
-      likeItems = {this.likeItem}
       >
       
       </ListItems>
