@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './ListItems.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FlipMove from 'react-flip-move';
 
 function ListItems(props){
-    const [favorite, setFavorite] = useState(false);
     const items = props.items;
     const listItems = items.map(items =>
         {
@@ -28,8 +27,8 @@ function ListItems(props){
                />
               <FontAwesomeIcon className="like"
                icon="heart"
-               color={favorite? "yellow" : "white"}
-               onClick={() => setFavorite(!favorite)}
+               color={items.favorite ? "yellow" : "grey"}
+               onClick={() => props.favorite(items.key)}
                />
 
 

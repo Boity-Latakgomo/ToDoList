@@ -16,22 +16,23 @@ class App extends React.Component {
       items:[],
       currentItem:{
         text:'',
-        key:''
+        key:'',
+        favorite: false,
       }
-     
-    }
+     }
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.setUpdate = this.setUpdate.bind(this);
+    this.favorite = this.favorite.bind(this);
   }
   handleInput(e){
     this.setState({
       currentItem:{
         text: e.target.value,
-        key: Date.now()
+        key: Date.now(),
+        favorite: false,
       }
-
     })
   }
     addItem(e){
@@ -56,6 +57,20 @@ class App extends React.Component {
         items:filteredItems
         })
      }
+     favorite(key){
+       const list = this.state.items.map(item => {
+         if(item.key == key){
+           if(item.favorite){
+             return {...item, favorite : false};
+           }
+           return {...item, favorite : true}
+         }else{
+           return item;
+         }
+         
+       });
+       this.setState({items : list})
+     }
      setUpdate(text, key){
        const items = this.state.items;
        items.map(item =>{
@@ -63,6 +78,7 @@ class App extends React.Component {
            item.text=text;
          }
        })
+
        this.setState({
         items: items
        })
@@ -86,6 +102,7 @@ class App extends React.Component {
       <ListItems items= {this.state.items}
       deleteItems = {this.deleteItem}
       setUpdate = {this.setUpdate }
+      favorite = {this.favorite}
       >
       
       </ListItems>
