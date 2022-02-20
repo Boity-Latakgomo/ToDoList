@@ -1,6 +1,10 @@
 body{
   background-color: purple;
 }
+.Title{
+  color: white;
+  text-align: center;
+}
 .App{
   background-color: #3f3160;
   min-height: 600px;
