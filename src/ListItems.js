@@ -27,7 +27,7 @@ function ListItems(props){
                />
               <FontAwesomeIcon className="like"
                icon="heart"
-               color={items.favorite ? "yellow" : "white"}
+               color={items.favorite ? "red" : "white"}
                onClick={() => props.favorite(items.key)}
                />
 
